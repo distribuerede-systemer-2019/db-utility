@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS dis;
-USE dis;
+CREATE DATABASE IF NOT EXISTS @DATABASE_NAME;
+USE @DATABASE_NAME;
 
 /* Create Tables */
 
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS users
 
 /* Create Dummy Account */
 
-INSERT INTO `dis`.`users`(`email`,`active`,`password`)
+INSERT INTO `@DATABASE_NAME`.`users`(`email`,`active`,`password`)
 VALUES ('admin@admin.dk', TRUE, 'd6YSr320JnLXlp8YYxUcNQ==');
 
 
@@ -152,8 +152,8 @@ REFERENCES users (userid)
   ON UPDATE RESTRICT;
 
 
-CREATE DATABASE IF NOT EXISTS dis;
-USE dis;
+CREATE DATABASE IF NOT EXISTS @DATABASE_NAME;
+USE @DATABASE_NAME;
 SET SESSION FOREIGN_KEY_CHECKS = 0;
 
 /* Create Tables */
