@@ -3,7 +3,7 @@
 ### 1. Opgave - Hent dette repository
 1. Åbn din terminal og naviger hen til mappen hvor du ønsker dette projekt skal ligge (HINT: `cd` bruges til at skifte mappe)
 2. Clone dette repository
-3. Åbn IntelliJ  og importer projectet. Vælg `import project from existing model` og vælg `maven`
+3. Åbn IntelliJ  og importer projectet. Vælg `import project from external model` og vælg `maven`
 4. OBS: Hvis klassen `ResetDatabase` ikke kan køres, gå til `file` -> `project structure` -> `modules`. Klik på mappen `src` og marker den, og tryk `Sources`. Herefter OK, og du bør kunne køre filen.  
 
 ### 2. Opgave - Kør projektet
@@ -33,8 +33,8 @@ kan køre.
 DATABASE_HOST (default er localhost)
 DATABASE_NAME (her vælger du "dis")
 DATABASE_PORT (default er 3306)
-DATABASE_USER
-DATABASE_PASSWORD
+DATABASE_USER (vi foreslår at bruge "root", men hvis du har andre connections kan disse også bruges)
+DATABASE_PASSWORD (dit root password)
 ```
 6. Tryk OK og OK
 7. Kør programmet igen
@@ -54,5 +54,5 @@ Tegn databasediagrammet. Hvilke tabeller er der, hvilke felter indeholder de, hv
 ### 6. Forskellige SQL-queries
 1. List alle courses. (Brug SELECT)
 2. Prøv at tilføj en ny student. I kan få inspiration i `sql.sql` filen, hvor i kan se, hvordan `INSERT` kommandoen fungere.
-3. Assign den nye studerende til et specifict course 
-4. (SVÆR) List alle studerende som er assigned til faget Distribuerede Systemer. (Hint: I skal bruge en `INNER JOIN` kommando, som finder ud af, hvad to databaser har tilfældes ud fra nogle fælles felter (typisk bruger man foreign keys). I bunden af `sql.sql` står der en specific query. Denne kan bruges, hvis i tilføjer en betingelse. 
+3. Assign den nye studerende til et specifikt course 
+4. (SVÆR) List alle studerende som er assigned til faget Distribuerede Systemer. (Hint: I skal bruge en `INNER JOIN` kommando, som finder ud af, hvad to databaser har tilfælles ud fra nogle fælles felter (typisk bruger man foreign keys). I bunden af `sql.sql` står der en specific query. Denne kan bruges, hvis i tilføjer en betingelse. 
