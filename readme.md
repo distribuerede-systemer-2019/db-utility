@@ -43,6 +43,8 @@ Hvis alt virker som det skal, så printes en masse tekst i konsollen og du kan n
 samt værdier der er blevet insat. Læg mærke til at det her sagtens kan lade sig gøre at køre `INSERT` statements, hvis I 
 vil have default indhold hver gang scriptet køres.
 
+OBS: HVIS DU IKKE KAN HUSKE DIT PASSWORD, SÅ KIG NEDERST HVORDAN DU NULSTILLER. KUN FOR MAC INDTIL VIDERE.
+
 ### 4. Opgave
 Scriptet er lavet således at det sletter, opretter og kører `sql.sql` filen hver gang programmet køres. Du kan derfor
 prøve at smide en masse indhold i databasen og så køre scriptet igen. Din database skulle nu gerne være rullet tilbage
@@ -56,3 +58,14 @@ Tegn databasediagrammet. Hvilke tabeller er der, hvilke felter indeholder de, hv
 2. Prøv at tilføj en ny student. I kan få inspiration i `sql.sql` filen, hvor i kan se, hvordan `INSERT` kommandoen fungere.
 3. Assign den nye studerende til et specifikt course 
 4. (SVÆR) List alle studerende som er assigned til faget Distribuerede Systemer. (Hint: I skal bruge en `INNER JOIN` kommando, som finder ud af, hvad to databaser har tilfælles ud fra nogle fælles felter (typisk bruger man foreign keys). I bunden af `sql.sql` står der en specific query. Denne kan bruges, hvis i tilføjer en betingelse. 
+
+
+
+## RESET ROOT PASSWORD
+1. Stop din MySQL server. Dette kan gøre i indstillinger eller ved at skrive `sudo /usr/local/mysql/support-files/mysql.server stop` i terminalen. (Hvis dette ikke virker, ligger jeres MySQL nok et andet sted. Prøv at find den korrekte sti)
+2. Start MySQL server igen i uden grant tables `sudo /usr/local/mysql/support-files/mysql.server start --skip-grant-tables`
+3. Start MySQL med `mysql -u root`
+4. Skriv `FLUSH PRIVILEGES;`
+5. Skift password m. `mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass';` - Husk at ændr værdien efter `IDENTIFIED BY`
+6. Genstart serveren ved først at kalde `sudo /usr/local/mysql/support-files/mysql.server stop` og derefter `sudo /usr/local/mysql/support-files/mysql.server start`
+7. Færdig
